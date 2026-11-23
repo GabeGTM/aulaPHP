@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soma de 1 até N</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <h1>Soma de números de 1 até N</h1>

@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Média de 8 Notas</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <h1>Média de 8 notas</h1>

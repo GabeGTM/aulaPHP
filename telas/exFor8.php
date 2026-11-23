@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Análise de Temperaturas</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <h1>Análise de temperaturas (7 dias)</h1>
