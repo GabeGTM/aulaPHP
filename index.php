@@ -84,6 +84,49 @@
     <button><a href="telas/exCon16.php">Leia a idade e verifique se a entrada é permitida (mínimo 16 anos).</a></button><br>
     <button><a href="telas/exCon17.php">Leia o saldo bancário e verifique se está positivo, negativo ou zerado.</a></button>
 
+    <h2>Exercícios com FOR</h2>
+    <br><br>
+
+    <button><a href="telas/exFor1.php">1. Contagem crescente (1 até o número informado).</a></button><br>
+    <button><a href="telas/exFor2.php">2. Contagem regressiva (até zero).</a></button><br>
+    <button><a href="telas/exFor3.php">3. Soma de números de 1 até N.</a></button><br>
+    <button><a href="telas/exFor4.php">4. Múltiplos entre 1 e 100.</a></button><br>
+    <button><a href="telas/exFor5.php">5. Contagem de números pares (20 números).</a></button><br>
+    <button><a href="telas/exFor6.php">6. Tabuada personalizada (1 ao 10).</a></button><br>
+    <button><a href="telas/exFor7.php">7. Média de 8 notas e situação do aluno.</a></button><br>
+    <button><a href="telas/exFor8.php">8. Análise de temperaturas de 7 dias (média e dias acima de 30°C).</a></button><br>
+    <button><a href="telas/exFor9.php">9. Soma dos números ímpares entre 1 e N.</a></button><br>
+    <button><a href="telas/exFor10.php">10. Fatorial de um número inteiro não negativo.</a></button><br>
+    <button><a href="telas/exFor11.php">11. Soma dos quadrados de 1 até N.</a></button><br>
+    <button><a href="telas/exFor12.php">12. Divisibilidade por 3 (30 números).</a></button><br>
+    <br><br>
+    
+    <h2>Exercícios com WHILE</h2>
+    <br><br>
+
+    <button><a href="telas/exWhile13.php">13. Senha de acesso.</a></button><br>
+    <button><a href="telas/exWhile14.php">14. Acumulador de valores (enquanto soma não ultrapassar 200).</a></button><br>
+    <button><a href="telas/exWhile15.php">15. Validação de idade (0 a 120).</a></button><br>
+    <button><a href="telas/exWhile16.php">16. Contagem de números positivos até digitar negativo.</a></button><br>
+    <button><a href="telas/exWhile17.php">17. Divisão sucessiva por 2 (parte inteira até menor que 1).</a></button><br>
+    <button><a href="telas/exWhile18.php">18. Crescimento de investimento (R$ 1.000 a 2% ao mês até R$ 2.000).</a></button><br>
+    <button><a href="telas/exWhile19.php">19. Localização do número 50.</a></button><br>
+    <button><a href="telas/exWhile20.php">20. Soma dos dígitos de um número inteiro positivo.</a></button><br>
+    <button><a href="telas/exWhile21.php">21. Adivinhe o número secreto.</a></button><br>
+    <button><a href="telas/exWhile22.php">22. Contagem regressiva por intervalo.</a></button><br>
+    <br><br>
+
+    <h2>Exercícios com DO WHILE</h2>
+    <br><br>
+
+    <button><a href="telas/exDoWhile23.php">23. Menu de operações matemáticas.</a></button><br>
+    <button><a href="telas/exDoWhile24.php">24. Cadastro de produtos (quantidade e valor total).</a></button><br>
+    <button><a href="telas/exDoWhile25.php">25. Calculadora de média de alunos.</a></button><br>
+    <button><a href="telas/exDoWhile26.php">26. Caixa eletrônico (saldo inicial R$ 1.500,00).</a></button><br>
+    <button><a href="telas/exDoWhile27.php">27. Pesquisa de satisfação (notas de 1 a 5).</a></button><br>
+    <button><a href="telas/exDoWhile28.php">28. Calculadora de descontos (10% acima de R$ 200,00).</a></button><br>
+    <button><a href="telas/exDoWhile29.php">29. Controle de acesso (usuário e senha).</a></button><br>
+    <button><a href="telas/exDoWhile30.php">30. Conversor de moedas (reais para dólares).</a></button><br>
 
 </body>
 </html>

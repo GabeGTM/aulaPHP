@@ -627,5 +627,405 @@ class Funcoes {
     }//condicionais 17
 
 
+    public function contagemCrescente($n) {
+        if ($n < 1) return "Informe um número inteiro positivo.";
+        $lista = [];
+        for ($i = 1; $i <= $n; $i++) {
+            $lista[] = $i;
+        }
+        return implode(", ", $lista);
+    }//for 01
+
+    public function contagemRegressiva($n) {
+        if ($n < 0) return "Informe um número inteiro positivo.";
+        $lista = [];
+        for ($i = $n; $i >= 0; $i--) {
+            $lista[] = $i;
+        }
+        return implode(", ", $lista);
+    }//for 02
+
+    public function somaAteN($n) {
+        if ($n < 1) return "Informe um número inteiro positivo.";
+        $soma = 0;
+        for ($i = 1; $i <= $n; $i++) {
+            $soma += $i;
+        }
+        return "Soma de 1 até $n: $soma";
+    }//for 03
+
+    public function multiplosAte100($num) {
+        if ($num == 0) return "Zero não possui múltiplos finitos.";
+        $multiplos = [];
+        for ($i = 1; $i <= 100; $i++) {
+            if ($i % $num == 0) {
+                $multiplos[] = $i;
+            }
+        }
+        return empty($multiplos) ? "Nenhum múltiplo entre 1 e 100." : implode(", ", $multiplos);
+    }//for 04
+
+    public function contarPares(array $numeros) {
+        $pares = 0;
+        $total = count($numeros);
+        for ($i = 0; $i < $total; $i++) {
+            if ((int)$numeros[$i] % 2 == 0) {
+                $pares++;
+            }
+        }
+        return "Total de números pares: $pares";
+    }//for 05
+
+    public function tabuada($num) {
+        $linhas = [];
+        for ($i = 1; $i <= 10; $i++) {
+            $res = $num * $i;
+            $linhas[] = "$num x $i = $res";
+        }
+        return implode("<br>", $linhas);
+    }//for 06
+
+    public function mediaOitoNotas(array $notas) {
+        $soma = 0;
+        $qtd = count($notas);
+        for ($i = 0; $i < $qtd; $i++) {
+            $soma += (float)$notas[$i];
+        }
+        $media = $qtd > 0 ? $soma / $qtd : 0;
+        $situacao = $media >= 7 ? "Aprovado" : "Reprovado";
+        return "Média: " . number_format($media, 2, ',', '.') . " - $situacao";
+    }//for 07
+
+    public function analiseTemperaturas(array $temps) {
+        $soma = 0;
+        $acima30 = 0;
+        $qtd = count($temps);
+        for ($i = 0; $i < $qtd; $i++) {
+            $t = (float)$temps[$i];
+            $soma += $t;
+            if ($t > 30) {
+                $acima30++;
+            }
+        }
+        $media = $qtd > 0 ? $soma / $qtd : 0;
+        return "Média: " . number_format($media, 1, ',', '.') . "°C | Dias acima de 30°C: $acima30";
+    }//for 08
+
+    public function somaImparesAteN($n) {
+        $soma = 0;
+        for ($i = 1; $i <= $n; $i++) {
+            if ($i % 2 != 0) {
+                $soma += $i;
+            }
+        }
+        return "Soma dos ímpares de 1 até $n: $soma";
+    }//for 09
+
+    public function fatorial($n) {
+        if ($n < 0) return "Informe um número inteiro não negativo.";
+        $fat = 1;
+        for ($i = 1; $i <= $n; $i++) {
+            $fat *= $i;
+        }
+        return "$n! = $fat";
+    }//for 10
+
+    public function somaQuadrados($n) {
+        if ($n < 1) return "Informe um número inteiro positivo.";
+        $soma = 0;
+        for ($i = 1; $i <= $n; $i++) {
+            $soma += ($i * $i);
+        }
+        return "Soma dos quadrados de 1 até $n: $soma";
+    }//for 11
+
+    public function divisiveisPorTres(array $numeros) {
+        $divisiveis = 0;
+        $naoDivisiveis = 0;
+        $qtd = count($numeros);
+        for ($i = 0; $i < $qtd; $i++) {
+            if ((int)$numeros[$i] % 3 == 0) {
+                $divisiveis++;
+            } else {
+                $naoDivisiveis++;
+            }
+        }
+        return "Divisíveis por 3: $divisiveis | Não divisíveis por 3: $naoDivisiveis";
+    }//for 12
+
+    // --- WHILE (13 a 22) ---
+
+    public function validarSenha($senhaDigitada, $senhaCorreta = "1234") {
+        $tentativas = 0;
+        $acertou = false;
+        // Em formulário web, avalia a tentativa atual mantendo o loop lógico
+        while (!$acertou) {
+            if ($senhaDigitada === $senhaCorreta) {
+                $acertou = true;
+                return "Acesso liberado! Senha correta.";
+            } else {
+                $tentativas++;
+                return "Senha incorreta. Tente novamente.";
+            }
+        }
+    }//while 13
+
+    public function acumularValorWhile($novoValor, &$somaAtual, $limite = 200) {
+    $valor = (int)$novoValor;
+
+    while ($somaAtual < $limite) {
+        $somaAtual += $valor;
+        break;
+    }
+
+    if ($somaAtual >= $limite) {
+        return "Limite atingido/ultrapassado! Soma atual: $somaAtual (meta: $limite).";
+    }
+
+    return "Soma acumulada: $somaAtual (ainda abaixo de $limite).";
+} // while 14
+
+    public function validarIdade($idade) {
+        while ($idade < 0 || $idade > 120) {
+            return "Idade inválida ($idade). Digite um valor entre 0 e 120.";
+        }
+        return "Idade válida informada: $idade anos.";
+    }//while 15
+
+    public function contarPositivosAteNegativo(array $numeros) {
+        $positivos = 0;
+        $i = 0;
+        $total = count($numeros);
+        while ($i < $total && (int)$numeros[$i] >= 0) {
+            if ((int)$numeros[$i] > 0) {
+                $positivos++;
+            }
+            $i++;
+        }
+        return "Quantidade de números positivos digitados: $positivos";
+    }//while 16
+
+    public function divisaoSucessiva($num) {
+        if ($num < 1) return "Informe um número inteiro positivo.";
+        $passos = [];
+        $atual = (int)$num;
+        while ($atual >= 1) {
+            $atual = intdiv($atual, 2);
+            $passos[] = $atual;
+        }
+        return "Sequência (parte inteira): " . implode(" -> ", $passos);
+    }//while 17
+
+    public function mesesInvestimento($capitalInicial = 1000, $meta = 2000, $taxaMensal = 0.02) {
+        $saldo = $capitalInicial;
+        $meses = 0;
+        while ($saldo <= $meta) {
+            $saldo += $saldo * $taxaMensal;
+            $meses++;
+        }
+        return "Levará $meses meses para ultrapassar R$ " . number_format($meta, 2, ',', '.') .
+               " (Saldo final: R$ " . number_format($saldo, 2, ',', '.') . ")";
+    }//while 18
+
+    public function buscarNumero50(array $numeros) {
+        $contador = 0;
+        $i = 0;
+        $total = count($numeros);
+        $encontrou = false;
+        while ($i < $total && !$encontrou) {
+            $contador++;
+            if ((int)$numeros[$i] == 50) {
+                $encontrou = true;
+            }
+            $i++;
+        }
+        return $encontrou
+            ? "Número 50 encontrado após $contador número(s)."
+            : "O número 50 ainda não foi informado ($contador número(s) lido(s)).";
+    }//while 19
+
+    public function somarDigitos($num) {
+        if ($num < 0) $num = abs((int)$num);
+        $soma = 0;
+        $atual = (int)$num;
+        while ($atual > 0) {
+            $soma += $atual % 10;
+            $atual = intdiv($atual, 10);
+        }
+        return "Soma dos algarismos de $num: $soma";
+    }//while 20
+
+    public function adivinharNumero($palpite, $secreto = 37) {
+        while ((int)$palpite !== $secreto) {
+            if ((int)$palpite < $secreto) {
+                return "O número secreto é **maior** que $palpite.";
+            } else {
+                return "O número secreto é **menor** que $palpite.";
+            }
+        }
+        return "Parabéns! Você acertou o número secreto ($secreto)!";
+    }//while 21
+
+    public function contagemIntervaloDecrescente($inicio, $fim) {
+        $lista = [];
+        $atual = (int)$inicio;
+        $alvo = (int)$fim;
+        while ($atual >= $alvo) {
+            $lista[] = $atual;
+            $atual--;
+        }
+        return empty($lista) ? "Valor inicial menor que o final." : implode(", ", $lista);
+    }//while 22
+
+    // --- DO WHILE (23 a 30) ---
+
+    public function operacaoMenu($opcao, $n1, $n2) {
+        $executou = false;
+        do {
+            switch ((int)$opcao) {
+                case 1:
+                    $resultado = "Resultado da soma: " . ($n1 + $n2);
+                    break;
+                case 2:
+                    $resultado = "Resultado da subtração: " . ($n1 - $n2);
+                    break;
+                case 3:
+                    $resultado = "Resultado da multiplicação: " . ($n1 * $n2);
+                    break;
+                case 4:
+                    $resultado = $n2 != 0 ? "Resultado da divisão: " . ($n1 / $n2) : "Erro: divisão por zero.";
+                    break;
+                case 0:
+                    $resultado = "Programa encerrado (opção 0).";
+                    break;
+                default:
+                    $resultado = "Opção inválida.";
+            }
+            $executou = true;
+        } while (!$executou);
+        return $resultado;
+    }//do while 23
+
+    public function resumoProdutos(array $precos) {
+        $qtd = 0;
+        $total = 0;
+        $i = 0;
+        $n = count($precos);
+        if ($n === 0) return "Nenhum produto cadastrado.";
+        do {
+            $total += (float)$precos[$i];
+            $qtd++;
+            $i++;
+        } while ($i < $n);
+        return "Produtos cadastrados: $qtd | Valor total: R$ " . number_format($total, 2, ',', '.');
+    }//do while 24
+
+    public function calcularMediaSimples(array $notas) {
+        $soma = 0;
+        $i = 0;
+        $qtd = count($notas);
+        if ($qtd === 0) return "Informe ao menos uma nota.";
+        do {
+            $soma += (float)$notas[$i];
+            $i++;
+        } while ($i < $qtd);
+        $media = $soma / $qtd;
+        return "Média do aluno: " . number_format($media, 2, ',', '.');
+    }//do while 25
+
+    public function caixaEletronico($acao, $valor, &$saldo = 1500.00) {
+        $executou = false;
+        do {
+            switch ($acao) {
+                case "saldo":
+                    $msg = "Saldo atual: R$ " . number_format($saldo, 2, ',', '.');
+                    break;
+                case "saque":
+                    if ($valor <= 0) {
+                        $msg = "Valor de saque inválido.";
+                    } elseif ($valor > $saldo) {
+                        $msg = "Saldo insuficiente! Disponível: R$ " . number_format($saldo, 2, ',', '.');
+                    } else {
+                        $saldo -= $valor;
+                        $msg = "Saque de R$ " . number_format($valor, 2, ',', '.') . " realizado. Novo saldo: R$ " . number_format($saldo, 2, ',', '.');
+                    }
+                    break;
+                case "deposito":
+                    if ($valor <= 0) {
+                        $msg = "Valor de depósito inválido.";
+                    } else {
+                        $saldo += $valor;
+                        $msg = "Depósito de R$ " . number_format($valor, 2, ',', '.') . " realizado. Novo saldo: R$ " . number_format($saldo, 2, ',', '.');
+                    }
+                    break;
+                case "sair":
+                    $msg = "Atendimento encerrado.";
+                    break;
+                default:
+                    $msg = "Opção inválida.";
+            }
+            $executou = true;
+        } while (!$executou);
+        return $msg;
+    }//do while 26
+
+    public function pesquisaSatisfacao(array $avaliacoes) {
+        $soma = 0;
+        $qtd = 0;
+        $i = 0;
+        $total = count($avaliacoes);
+        if ($total === 0) return "Nenhuma avaliação registrada.";
+        do {
+            $nota = (int)$avaliacoes[$i];
+            if ($nota >= 1 && $nota <= 5) {
+                $soma += $nota;
+                $qtd++;
+            }
+            $i++;
+        } while ($i < $total);
+        $media = $qtd > 0 ? $soma / $qtd : 0;
+        return "Total de avaliações: $qtd | Média: " . number_format($media, 2, ',', '.');
+    }//do while 27
+
+    public function calcularDescontoCompra($valorCompra) {
+        $executou = false;
+        do {
+            $valor = (float)$valorCompra;
+            if ($valor > 200) {
+                $final = $valor * 0.90;
+                $msg = "Desconto de 10% aplicado! Valor final: R$ " . number_format($final, 2, ',', '.');
+            } else {
+                $msg = "Sem desconto (compra até R$ 200,00). Valor final: R$ " . number_format($valor, 2, ',', '.');
+            }
+            $executou = true;
+        } while (!$executou);
+        return $msg;
+    }//do while 28
+
+    public function controleAcesso($usuario, $senha, $userCorreto = "admin", $passCorreta = "1234") {
+        $verificado = false;
+        do {
+            $ok = ($usuario === $userCorreto && $senha === $passCorreta);
+            $msg = $ok ? "Dados corretos! Acesso permitido." : "Dados incorretos!";
+            $verificado = true;
+        } while (!$verificado);
+        return $msg;
+    }//do while 29
+
+    public function converterRealParaDolar($reais, $cotacao) {
+        $convertido = false;
+        do {
+            if ($cotacao <= 0) {
+                $msg = "Cotação deve ser maior que zero.";
+            } else {
+                $dolares = (float)$reais / (float)$cotacao;
+                $msg = "R$ " . number_format((float)$reais, 2, ',', '.') . " = US$ " . number_format($dolares, 2, ',', '.');
+            }
+            $convertido = true;
+        } while (!$convertido);
+        return $msg;
+    }//do while 30
+
+
 } //fim do metodos   
 ?> 
